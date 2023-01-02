@@ -41,7 +41,7 @@ const AddEdit = () => {
                     setState({ username: "", email: "", password:"" });
                 }).catch((err) => toast.error(err.response.data));
                 toast.success("Data Inserted");
-                setTimeout(() =>  history("/"), 500);
+                setTimeout(() =>  history("/dashboard"), 500);
             }else{
                 axios.put(`http://localhost:5000/api/update/${id}`, {
                     username,
@@ -52,7 +52,7 @@ const AddEdit = () => {
                     setState({ username: "", email: "", password:"" });
                 }).catch((err) => toast.error(err.response.data));
                 toast.success(`Data updated User id ${id}`);
-                setTimeout(() =>  history("/"), 500);
+                setTimeout(() =>  history("/dashboard"), 500);
             }
         }
     };
@@ -102,7 +102,7 @@ const AddEdit = () => {
             </div>
             <div className="form-group">
                 <input type="submit" value={id ? "Update" : "Save"} className="btn btn-primary btn-lg"/>
-            <Link to="/" >
+            <Link to="/dashboard" >
                 <input type="button" className='btn btn-danger btn-lg' value="Go back"/>
             </Link>
             </div>

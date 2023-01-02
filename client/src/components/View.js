@@ -36,7 +36,7 @@ const View = () => {
                 <span>{user.password}</span>
                 <br />
                 <br />
-                <Link to="/">
+                <Link to="/dashboard ">
                     <input type="button"  className='btn btn-danger' value="Go Back" />
                 </Link>
             </div>

@@ -65,9 +65,6 @@ const Home = () => {
                         <Link to={`/view/${item.id}`}>
                             <button className='btn btn-view'>View</button>
                         </Link>
-                        <Link to={`/user/login`}>
-                            <button className='btn btn-view'>Login</button>
-                        </Link>
                     </td>
                 </tr>
             );

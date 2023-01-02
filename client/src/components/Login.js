@@ -28,7 +28,7 @@ const Login = () => {
                 }).then((response) => {
                     if(response.data[0]){
                         toast.success("Login Successfull");
-                        setTimeout(() => history("/"), 500);
+                        setTimeout(() => history("/dashboard"), 500);
                     }else{
                        toast.error("Wrong information");
                     }
