@@ -71,6 +71,24 @@ app.put('/api/update/:id', (req, res) => {
 
 });
 
+app.post('/api/login', (req, res) => {
+    const {username, password} = req.body;
+ const sqlLogin = "SELECT * FROM register WHERE username=? AND password= ? ";
+    db.query(sqlLogin, [username,password],(error, result) => {
+        if(error){
+            console.log("error", error);
+        }else{
+            if(result[0]){
+                res.send(result);
+                console.log(result[0].email);
+            }else{
+                res.send({message: "Wrong username/password enterted"});
+                console.log("wrong");
+            }
+        }
+    });
+});
+
 app.get('/', (req, res) => {
    
     res.send("Hello Node.js");
